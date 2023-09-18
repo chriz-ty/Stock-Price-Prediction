@@ -25,7 +25,7 @@ forecast_out = int(math.ceil(0.1*len(df))) #calculating the number of days to be
 
 df['label'] = df[forecast_col].shift(-forecast_out)  #This column represents the future prices to be predicted.
 
-x = np.array(df.drop(['label'], axis=1))  #preparing the feature datas by dropping the label column.
+x = np.array(df.drop(['label', 'Adj. Close'], axis=1))  #preparing the feature datas by dropping the label column.
 x = preprocessing.scale(x)
 
 #The next lines separates the most recent 'forecast_out' days of data as 'x_lately,' which will be used for making future predictions.
