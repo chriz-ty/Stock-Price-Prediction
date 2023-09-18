@@ -21,7 +21,7 @@ df = df[['Adj. Close', 'HL_PCT', 'PCT_change', 'Adj. Volume']]
 forecast_col = 'Adj. Close'  #sets the target variable that is to be predicted.
 df.fillna(-99999, inplace=True) #It fills any missing data in the DataFrame with the value -99999.
 
-forecast_out = int(math.ceil(0.01*len(df))) #calculating the number of days to be predicted.
+forecast_out = int(math.ceil(0.1*len(df))) #calculating the number of days to be predicted.
 
 df['label'] = df[forecast_col].shift(-forecast_out)  #This column represents the future prices to be predicted.
 
