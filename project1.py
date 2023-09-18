@@ -48,7 +48,7 @@ with open('linearregression.pickle','wb') as f:
 '''
 
 pickle_in = open('linearregression.pickle','rb')  #It loads the pre-trained linear regression model from the pickle file.
-clf = pickle.load()
+clf = pickle.load(pickle_in)
 
 accuracy = clf.score(x_test,y_test) #It calculates the accuracy of the model.
 forecast_set = clf.predict(x_lately) #uses the loaded model to make predictions for the 'x_lately' data.
